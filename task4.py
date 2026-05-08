@@ -5,6 +5,17 @@ from rich.console import Console
 from rich.table import Table
 
 
+ASSISTANT_STYLE = "bold green"
+
+COMMANDS = [
+    ("hello", "", "Привітання від бота"),
+    ("add", "<name> <phone>", "Додати новий контакт"),
+    ("change", "<name> <phone>", "Оновити телефон існуючого контакту"),
+    ("phone", "<name>", "Показати телефон контакту"),
+    ("all", "", "Показати всі контакти"),
+    ("close | exit", "", "Завершити роботу"),
+]
+
 console = Console()
 
 
@@ -68,18 +79,6 @@ def show_all(contacts: dict[str, str]):
         table.add_row(name, phone)
 
     return table
-
-
-ASSISTANT_STYLE = "bold green"
-
-COMMANDS = [
-    ("hello", "", "Привітання від бота"),
-    ("add", "<name> <phone>", "Додати новий контакт"),
-    ("change", "<name> <phone>", "Оновити телефон існуючого контакту"),
-    ("phone", "<name>", "Показати телефон контакту"),
-    ("all", "", "Показати всі контакти"),
-    ("close | exit", "", "Завершити роботу"),
-]
 
 
 def say(message) -> None:
